@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="png-transparent-bitter-orange-tangerine-large-oranges-oranges-natural-foods-food-citrus-thumbnail.ico"
+      type="image/x-icon"
+    />
+    <title>Recipe-maker app || Foodie</title>
+    <style>
+      ::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: orange; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black; 
+}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+          "sans-serif";
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      h1 {
+        font-size: 3vw;
+        color: white;
+        padding: 30px;
+      }
+      .main {
+        min-height: 100%;
+        width: 100%;
+        background-color: black;
+      }
+      .data {
+        background-color: white;
+        height: 800px;
+        width: 100%;
+        margin-left: 400px;
+        margin-top: 100px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .right {
+        font-weight: bold;
+        gap: 100px;
+        padding: 30px;
+        color: white;
+      }
+      .right a {
+        text-decoration: none;
+        color: white;
+        font-size: large;
+      }
+      .data input {
+        margin-left: 130px;
+        padding: 15px 30px;
+      }
+      button {
+        background-color: black;
+        color: white;
+        padding: 15px 20px;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 10px;
+        margin-left: 500px;
+      }
+      .left {
+        display: flex;
+      }
+      h3 {
+        text-align: center;
+        margin-top: 30px;
+      }
+      img {
+        height: 30px;
+        width: 30px;
+        padding: 30px 30px;
+      }
+      @media (max-width:600) {
+        h1{
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav">
+        <div class="left">
+          <img
+            src="png-transparent-bitter-orange-tangerine-large-oranges-oranges-natural-foods-food-citrus-thumbnail.ico"
+            alt=""
+          />
+          <h1>Foodie</h1>
+        </div>
+        <div class="right">
+          <a href="image-search.html">Home</a>
+          -------
+          <a href="https://www.themealdb.com/api.php">Api</a>
+        </div>
+      </div>
+      <div class="data">
+        <button>Get Random Recipes</button>
+        <br />
+        <h3 class="recipeName">
+        </h3>
+        <h6 class="recipeCatogorie"></h6>
+        <h6 class="recipeOrigin"></h6>
+        <h4 class="recipe-steps1"></h4>
+        <h4 class="recipe-steps2"></h4>
+        <h4 class="recipe-steps3"></h4>
+        <h4 class="recipe-steps4"></h4>
+        <h4 class="recipe-steps5"></h4>
+        <h4 class="recipe-steps6"></h4>
+        <h4 class="recipe-steps7"></h4>
+        <h4 class="recipe-steps8"></h4>
+        <h4 class="recipe-steps9"></h4>
+        <h4 class="recipe-steps10"></h4>
+        <h4 class="recipe-steps11"></h4>
+        <h4 class="recipe-steps12"></h4>
+        <h4 class="recipe-steps13"></h4>
+        <h4 class="recipe-steps14"></h4>
+        <h4 class="recipe-steps15"></h4>
+        <h4 class="recipe-steps16"></h4>
+        <h4 class="recipe-steps17"></h4>
+        <h4 class="recipe-steps18"></h4>
+        <h4 class="recipe-steps19"></h4>
+        <h4 class="recipe-steps20"></h4>
+        <p class="recipe-instructions"></p>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      const btn = document.querySelector("button");
+      var rn = document.querySelector(".recipeName");
+      var rc = document.querySelector(".recipeCatogorie");
+      var ro = document.querySelector(".recipeOrigin");
+      var rs1 = document.querySelector(".recipe-steps1");
+      var rs2 = document.querySelector(".recipe-steps2");
+      var rs3 = document.querySelector(".recipe-steps3");
+      var rs4 = document.querySelector(".recipe-steps4");
+      var rs5 = document.querySelector(".recipe-steps5");
+      var rs6 = document.querySelector(".recipe-steps6");
+      var rs7 = document.querySelector(".recipe-steps7");
+      var rs8 = document.querySelector(".recipe-steps8");
+      var rs9 = document.querySelector(".recipe-steps9");
+      var rs10 = document.querySelector(".recipe-steps10");
+      var rs11 = document.querySelector(".recipe-steps11");
+      var rs12 = document.querySelector(".recipe-steps12");
+      var rs13 = document.querySelector(".recipe-steps13");
+      var rs14 = document.querySelector(".recipe-steps14");
+      var rs15 = document.querySelector(".recipe-steps15");
+      var rs16 = document.querySelector(".recipe-steps16");
+      var rs17 = document.querySelector(".recipe-steps17");
+      var rs18 = document.querySelector(".recipe-steps18");
+      var rs19 = document.querySelector(".recipe-steps19");
+      var rs20 = document.querySelector(".recipe-steps20");
+      var instructions = document.querySelector(".recipe-instructions")
+
+      const apikey = "7d7b20cf7d5b45d49544596860c42b03";
+      var API = `https://www.themealdb.com/api/json/v1/1/random.php`;
+
+      btn.addEventListener("click", () => {
+        // Fetch a random quote from API & parse responseas JSON
+        fetch(API)
+          .then((res) => res.json())
+          .then((data) => {
+            // Update paragraph text with new fetched quote
+            rn.innerHTML = data.meals[0].strMeal;
+            rc.innerHTML = data.meals[0].strCategory;
+            ro.innerHTML = data.meals[0].strArea;
+            rs1.innerHTML = data.meals[0].strIngredient1;
+            rs2.innerHTML = data.meals[0].strIngredient2;
+            rs3.innerHTML = data.meals[0].strIngredient3;
+            rs4.innerHTML = data.meals[0].strIngredient4;
+            rs5.innerHTML = data.meals[0].strIngredient5;
+            rs6.innerHTML = data.meals[0].strIngredient6;
+            rs7.innerHTML = data.meals[0].strIngredient7;
+            rs8.innerHTML = data.meals[0].strIngredient8;
+            rs9.innerHTML = data.meals[0].strIngredient9;
+            rs10.innerHTML = data.meals[0].strIngredient10;
+            rs11.innerHTML = data.meals[0].strIngredient11;
+            rs12.innerHTML = data.meals[0].strIngredient12;
+            rs13.innerHTML = data.meals[0].strIngredient13;
+            rs14.innerHTML = data.meals[0].strIngredient14;
+            rs15.innerHTML = data.meals[0].strIngredient15;
+            rs16.innerHTML = data.meals[0].strIngredient16;
+            rs17.innerHTML = data.meals[0].strIngredient17;
+            rs18.innerHTML = data.meals[0].strIngredient18;
+            rs19.innerHTML = data.meals[0].strIngredient19;
+            rs20.innerHTML = data.meals[0].strIngredient20;
+            instructions.innerHTML = data.meals[0].strInstructions;
+            console.log(data);
+          })
+          .catch(() => alert("Error getting recipe!"));
+      });
+      gsap.from("button", {
+         x: -100,
+         opacity:0,
+         backgorundColor:"black",
+         duration:1,
+         
+          
+      })
+      var tl = gsap.timeline();
+      tl.from(".left", {
+        opacity:0,
+        scale:1,
+        y:-100,
+        duration:1,
+        delay:0.3,
+        stagger:0.8
+      })
+      tl.from(".right", {
+        opacity:0,
+        y:-100,
+        scale:1,
+        duration:1,
+        delay:0,
+        stagger:2
+      })
+      tl.from(".data",{
+        x:-100,
+        opacity:0,
+        backgroundColor:blue
+      })
+    </script>
+  </body>
+</html>
